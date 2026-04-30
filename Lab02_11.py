@@ -1,7 +1,7 @@
 # Lab02_11
 # Smart Classroom Quiz and Performance Analyzer
 
-# Step 1: Take student IDs and generate unique value
+# Step 1: Take IDs of students to generate unique value
 id1 = input("Enter Student 1 ID: ")  #student id 1
 id2 = input("Enter Student 2 ID: ")  #student id 2
 
@@ -14,19 +14,19 @@ unique_value = (last1 + last2) % 10  #calculate unique value
 print("Unique Value:", unique_value)  # Print unique value
 
 # Step 2: Store student names
-students = {} #Store name in curly bracket
+students = {} #sava name
 
 while True: #use "While True until it reach to break"
-    name = input("Enter student name (or type 'exit' to stop): ") #Keep on inserting name of the student and type "exit" if you want to stop
+    name = input("Enter student name (or type 'exit' to stop): ") #add names of the students and type "exit" if you want to stop
     
     # Stop condition (simple version)
-    if name == "exit" or name == "EXIT" or name == "Exit": # Exit the loop by typing "exit" if (any case)
+    if name == "exit" or name == "EXIT" or name == "Exit": # Exit by typing "exit" if (any case)
         break
     
     # Check empty name
     if name == "": #If the name is empty
         print("Warning: Name cannot be empty. Skipping...")  #show "Warning: Name cannot be empty. Skipping..." 
-        continue #continue to the next loop iteration
+        continue #continue to next
     
     # Store student with initial score 0
     students[name] = 0 #Store student 
@@ -45,17 +45,17 @@ for student in students: #Access each student
     # Question 1
     ans1 = int(input("Q1: " + str(unique_value) + " + 2 = ")) #ask question 1
     if ans1 == unique_value + 2: #check
-        score = score + 1 #Add score 1 if the answer is correct
+        score = score + 1 #Add score 1 if correct answer
     
     # Question 2
     ans2 = int(input("Q2: " + str(unique_value) + " * 3 = ")) #Ask question 2 
     if ans2 == unique_value * 3: #check answer
-        score = score + 1 #Add 1 point if the answer is correct
+        score = score + 1 #Add 1 point if correct answer
     
     # Question 3
     ans3 = int(input("Q3: " + str(unique_value) + " + 5 = ")) #Ask question 3
     if ans3 == unique_value + 5: #check
-        score = score + 1 #Add 1 point if the answer is correct
+        score = score + 1 #Add 1 point if correct answer
     
     # Store score
     students[student] = score #Store score
@@ -72,19 +72,19 @@ for student in students: #Access each student
     
     # Step 5: Certificate eligibility
     if score >= 2: #if the student score more than 2 
-        certificate = "Eligible" #Certified as "Eligible"
+        certificate = "Eligible" #it is  "Eligible"
     else: #Or else
-        certificate = "Not Eligible" #They are "Not Eligible"
+        certificate = "Not Eligible" #it is "Not Eligible"
     
     # Warning if score is 0
     if score == 0: #if they score 0
         print("Warning: Score is 0") #it will warn as "Warning: Score is 0"
     
     # Step 6: Display result
-    print("Score:", score) #print the score the student
+    print("Score:", score) #print score 
     print("Performance:", performance) # print performance 
     print("Certificate:", certificate) #print certificate
     
     # Step 7: Star pattern
     print("Stars Pattern:") #print "Stars Pattern:"
-    print("*" * score) #print star score  
+    print("*" * score) #print star score  of the students
