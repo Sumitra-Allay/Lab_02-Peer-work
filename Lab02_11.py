@@ -2,22 +2,22 @@
 # Smart Classroom Quiz and Performance Analyzer
 
 # Step 1: Take IDs of students to generate unique value
-id1 = input("Enter Student 1 ID: ")  #student id 1
-id2 = input("Enter Student 2 ID: ")  #student id 2
+studentID1 = input("Enter Student 1 ID: ")  #student id 1
+studentID2 = input("Enter Student 2 ID: ")  #student id 2
 
 # take last two digits
-last1 = int(id1[-2:]) #2 last digits of std 1
-last2 = int(id2[-2:]) #2 last digits of std 2
+lastD1 = int(studentID1[-2:]) #2 last digits of std 1
+lastD2 = int(studentID2[-2:]) #2 last digits of std 2
 
 # Generate unique value
-unique_value = (last1 + last2) % 10  #calculate unique value
-print("Unique Value:", unique_value)  # Print unique value
+unique_value = (lastD1 + lastD2) % 10  #calculate unique value
+print("unique Value:", unique_value)  # Print unique value
 
 # Step 2: Store student names
 students = {} #sava name
 
 while True: #use "While True until it reach to break"
-    name = input("Enter student name (or type 'exit' to stop): ") #add names of the students and type "exit" if you want to stop
+    name = input("Enter student names (or type 'exit' to stop): ") #add names of the students and type "exit" if you want to stop
     
     # Stop condition (simple version)
     if name == "exit" or name == "EXIT" or name == "Exit": # Exit by typing "exit" if (any case)
@@ -25,36 +25,36 @@ while True: #use "While True until it reach to break"
     
     # Check empty name
     if name == "": #If the name is empty
-        print("Warning: Name cannot be empty. Skipping...")  #show "Warning: Name cannot be empty. Skipping..." 
+        print("Warning: Try Again ")  #show "Warning: Name cannot be empty." 
         continue #continue to next
     
     # Store student with initial score 0
     students[name] = 0 #Store student 
 
 # Display student names
-print("List of Students:") #Print "List of Students:"
+print("List Students:") #Print "List of Students:"
 for s in students: #students in s
     print("-", s) #Then print it
 
 # Step 3: Conduct quiz
 for student in students: #Access each student
-    print("Quiz for", student) #print quiz message for each students
+    print("Quiz is for", student) #print quiz message for each students
     
     score = 0 #Initial score is 0
     
     # Question 1
-    ans1 = int(input("Q1: " + str(unique_value) + " + 2 = ")) #ask question 1
-    if ans1 == unique_value + 2: #check
+    Ans1 = int(input("Q1: " + str(unique_value) + " + 2 = ")) #ask question 1
+    if Ans1 == unique_value + 2: #check
         score = score + 1 #Add score 1 if correct answer
     
     # Question 2
-    ans2 = int(input("Q2: " + str(unique_value) + " * 3 = ")) #Ask question 2 
-    if ans2 == unique_value * 3: #check answer
+    Ans2 = int(input("Q2: " + str(unique_value) + " * 3 = ")) #Ask question 2 
+    if Ans2 == unique_value * 3: #check answer
         score = score + 1 #Add 1 point if correct answer
     
     # Question 3
-    ans3 = int(input("Q3: " + str(unique_value) + " + 5 = ")) #Ask question 3
-    if ans3 == unique_value + 5: #check
+    Ans3 = int(input("Q3: " + str(unique_value) + " + 5 = ")) #Ask question 3
+    if Ans3 == unique_value + 5: #check
         score = score + 1 #Add 1 point if correct answer
     
     # Store score
@@ -87,4 +87,4 @@ for student in students: #Access each student
     
     # Step 7: Star pattern
     print("Stars Pattern:") #print "Stars Pattern:"
-    print("*" * score) #print star score  of the students
+    print("*" * score) #print star score  of the students 
